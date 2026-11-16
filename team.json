@@ -1,0 +1,27 @@
+{
+  "team_number": "T0027",
+  "group_lead": {
+    "name": "Seyanshu",
+    "enrollment_no": "2501010417",
+    "github": "seyansiuu"
+  },
+  "members": [
+    {
+      "name": "Shreemoyee Roy",
+      "enrollment_no": "2501010606",
+      "github": "shreexbit"
+    },
+    {
+      "name": "Garvit",
+      "enrollment_no": "2501010726",
+      "github": "garvitdhuran"
+    },
+    {
+      "name": "Garv",
+      "enrollment_no": "2501010165",
+      "github": "garvgrover1616"
+    }
+  ],
+  "postgres_version": "18.6",
+  "laptop_used_for_benchmarks": "MacBook Pro M4"
+}
