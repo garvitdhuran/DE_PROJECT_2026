@@ -4,4 +4,4 @@ large_data/
 
 # PostgreSQL local database files
 pgdata/
-
+logfile
