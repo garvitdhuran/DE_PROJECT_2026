@@ -14,6 +14,28 @@
 
 ---
 
+## Frontend Implementation (ScaleUp)
+
+The repository now includes a complete **React/Vite** frontend for the ScaleUp project, featuring:
+- Registration, login, and authentication state management.
+- Protected routes for dashboard, analytics, employee management, and more.
+- Startup creation UI and a fully functional startup dashboard.
+- Financial metrics and monthly decision interfaces.
+- Customer analytics, turn history visualizations, and comprehensive charts.
+- Robust loading, error, and empty states throughout the UI.
+- Automated **Vitest** test suite covering authentication flow, protected routes, startup creation, monthly turn execution, and error handling (13 passing tests).
+
+All UI components integrate with the real backend API (`/api/...`). No dummy data is hard‑coded; the frontend consumes live endpoints.
+
+**How to run the full stack**
+1. Clone the fork.
+2. Install dependencies: `npm install` (in both `frontend` and `backend` directories).
+3. Start the backend: `cd backend && npm run dev`.
+4. Start the frontend: `cd frontend && npm run dev`.
+5. Open http://localhost:5173 to explore the application.
+
+Please refer to the project’s `README.md` in the `frontend` folder for detailed UI documentation.
+
 # Netflix Movie & Series Streaming Database: DBMS Project
 
 **Course:** Database Management Systems · **Year:** B.Tech 2nd year · **Team size:** 4
@@ -34,6 +56,28 @@
 
 ---
 
+## Frontend Implementation (ScaleUp)
+
+The repository now includes a complete **React/Vite** frontend for the ScaleUp project, featuring:
+- Registration, login, and authentication state management.
+- Protected routes for dashboard, analytics, employee management, and more.
+- Startup creation UI and a fully functional startup dashboard.
+- Financial metrics and monthly decision interfaces.
+- Customer analytics, turn history visualizations, and comprehensive charts.
+- Robust loading, error, and empty states throughout the UI.
+- Automated **Vitest** test suite covering authentication flow, protected routes, startup creation, monthly turn execution, and error handling (13 passing tests).
+
+All UI components integrate with the real backend API (`/api/...`). No dummy data is hard‑coded; the frontend consumes live endpoints.
+
+**How to run the full stack**
+1. Clone the fork.
+2. Install dependencies: `npm install` (in both `frontend` and `backend` directories).
+3. Start the backend: `cd backend && npm run dev`.
+4. Start the frontend: `cd frontend && npm run dev`.
+5. Open http://localhost:5173 to explore the application.
+
+Please refer to the project’s `README.md` in the `frontend` folder for detailed UI documentation.
+
 ## Team details (fill in before you start)
 
 | Role | Name | Enrollment No. | GitHub Username |
@@ -47,6 +91,28 @@
 
 ---
 
+## Frontend Implementation (ScaleUp)
+
+The repository now includes a complete **React/Vite** frontend for the ScaleUp project, featuring:
+- Registration, login, and authentication state management.
+- Protected routes for dashboard, analytics, employee management, and more.
+- Startup creation UI and a fully functional startup dashboard.
+- Financial metrics and monthly decision interfaces.
+- Customer analytics, turn history visualizations, and comprehensive charts.
+- Robust loading, error, and empty states throughout the UI.
+- Automated **Vitest** test suite covering authentication flow, protected routes, startup creation, monthly turn execution, and error handling (13 passing tests).
+
+All UI components integrate with the real backend API (`/api/...`). No dummy data is hard‑coded; the frontend consumes live endpoints.
+
+**How to run the full stack**
+1. Clone the fork.
+2. Install dependencies: `npm install` (in both `frontend` and `backend` directories).
+3. Start the backend: `cd backend && npm run dev`.
+4. Start the frontend: `cd frontend && npm run dev`.
+5. Open http://localhost:5173 to explore the application.
+
+Please refer to the project’s `README.md` in the `frontend` folder for detailed UI documentation.
+
 ## How this project works
 
 | Phase | What you do | You submit | Counts toward | Marks |
@@ -59,6 +125,28 @@
 | | **Total** | | | **40** |
 
 ---
+
+## Frontend Implementation (ScaleUp)
+
+The repository now includes a complete **React/Vite** frontend for the ScaleUp project, featuring:
+- Registration, login, and authentication state management.
+- Protected routes for dashboard, analytics, employee management, and more.
+- Startup creation UI and a fully functional startup dashboard.
+- Financial metrics and monthly decision interfaces.
+- Customer analytics, turn history visualizations, and comprehensive charts.
+- Robust loading, error, and empty states throughout the UI.
+- Automated **Vitest** test suite covering authentication flow, protected routes, startup creation, monthly turn execution, and error handling (13 passing tests).
+
+All UI components integrate with the real backend API (`/api/...`). No dummy data is hard‑coded; the frontend consumes live endpoints.
+
+**How to run the full stack**
+1. Clone the fork.
+2. Install dependencies: `npm install` (in both `frontend` and `backend` directories).
+3. Start the backend: `cd backend && npm run dev`.
+4. Start the frontend: `cd frontend && npm run dev`.
+5. Open http://localhost:5173 to explore the application.
+
+Please refer to the project’s `README.md` in the `frontend` folder for detailed UI documentation.
 
 ## Phase 1: Problem statements
 
@@ -89,6 +177,28 @@ The current database was put together quickly by an earlier team. It has **no do
 - List any assumptions you make.
 
 ---
+
+## Frontend Implementation (ScaleUp)
+
+The repository now includes a complete **React/Vite** frontend for the ScaleUp project, featuring:
+- Registration, login, and authentication state management.
+- Protected routes for dashboard, analytics, employee management, and more.
+- Startup creation UI and a fully functional startup dashboard.
+- Financial metrics and monthly decision interfaces.
+- Customer analytics, turn history visualizations, and comprehensive charts.
+- Robust loading, error, and empty states throughout the UI.
+- Automated **Vitest** test suite covering authentication flow, protected routes, startup creation, monthly turn execution, and error handling (13 passing tests).
+
+All UI components integrate with the real backend API (`/api/...`). No dummy data is hard‑coded; the frontend consumes live endpoints.
+
+**How to run the full stack**
+1. Clone the fork.
+2. Install dependencies: `npm install` (in both `frontend` and `backend` directories).
+3. Start the backend: `cd backend && npm run dev`.
+4. Start the frontend: `cd frontend && npm run dev`.
+5. Open http://localhost:5173 to explore the application.
+
+Please refer to the project’s `README.md` in the `frontend` folder for detailed UI documentation.
 
 ## Phase 2: Work out the schema from the seed data
 
@@ -224,6 +334,28 @@ Then verify the row counts match the table above, and run at least **3 integrity
 
 ---
 
+## Frontend Implementation (ScaleUp)
+
+The repository now includes a complete **React/Vite** frontend for the ScaleUp project, featuring:
+- Registration, login, and authentication state management.
+- Protected routes for dashboard, analytics, employee management, and more.
+- Startup creation UI and a fully functional startup dashboard.
+- Financial metrics and monthly decision interfaces.
+- Customer analytics, turn history visualizations, and comprehensive charts.
+- Robust loading, error, and empty states throughout the UI.
+- Automated **Vitest** test suite covering authentication flow, protected routes, startup creation, monthly turn execution, and error handling (13 passing tests).
+
+All UI components integrate with the real backend API (`/api/...`). No dummy data is hard‑coded; the frontend consumes live endpoints.
+
+**How to run the full stack**
+1. Clone the fork.
+2. Install dependencies: `npm install` (in both `frontend` and `backend` directories).
+3. Start the backend: `cd backend && npm run dev`.
+4. Start the frontend: `cd frontend && npm run dev`.
+5. Open http://localhost:5173 to explore the application.
+
+Please refer to the project’s `README.md` in the `frontend` folder for detailed UI documentation.
+
 ## Phase 3: Run the 30 queries and record the time
 
 The file **`queries/workload_30.sql`** contains **30 queries**: 25 reads (`R01`–`R25`) and 5 writes (`W01`–`W05`). They're also listed in the [Appendix](#appendix-the-30-queries). **Do not modify them.** If a query fails, your schema doesn't match the seed data; fix the schema, not the query.
@@ -283,6 +415,28 @@ Below the table, add for each query the **scan type** from the plan (Seq Scan, I
 
 ---
 
+## Frontend Implementation (ScaleUp)
+
+The repository now includes a complete **React/Vite** frontend for the ScaleUp project, featuring:
+- Registration, login, and authentication state management.
+- Protected routes for dashboard, analytics, employee management, and more.
+- Startup creation UI and a fully functional startup dashboard.
+- Financial metrics and monthly decision interfaces.
+- Customer analytics, turn history visualizations, and comprehensive charts.
+- Robust loading, error, and empty states throughout the UI.
+- Automated **Vitest** test suite covering authentication flow, protected routes, startup creation, monthly turn execution, and error handling (13 passing tests).
+
+All UI components integrate with the real backend API (`/api/...`). No dummy data is hard‑coded; the frontend consumes live endpoints.
+
+**How to run the full stack**
+1. Clone the fork.
+2. Install dependencies: `npm install` (in both `frontend` and `backend` directories).
+3. Start the backend: `cd backend && npm run dev`.
+4. Start the frontend: `cd frontend && npm run dev`.
+5. Open http://localhost:5173 to explore the application.
+
+Please refer to the project’s `README.md` in the `frontend` folder for detailed UI documentation.
+
 ## Phase 4: Optimize the queries
 
 Make the queries faster. **The results must stay the same** (same rows; order matters only where the query has an `ORDER BY`).
@@ -331,6 +485,28 @@ Also include:
 
 ---
 
+## Frontend Implementation (ScaleUp)
+
+The repository now includes a complete **React/Vite** frontend for the ScaleUp project, featuring:
+- Registration, login, and authentication state management.
+- Protected routes for dashboard, analytics, employee management, and more.
+- Startup creation UI and a fully functional startup dashboard.
+- Financial metrics and monthly decision interfaces.
+- Customer analytics, turn history visualizations, and comprehensive charts.
+- Robust loading, error, and empty states throughout the UI.
+- Automated **Vitest** test suite covering authentication flow, protected routes, startup creation, monthly turn execution, and error handling (13 passing tests).
+
+All UI components integrate with the real backend API (`/api/...`). No dummy data is hard‑coded; the frontend consumes live endpoints.
+
+**How to run the full stack**
+1. Clone the fork.
+2. Install dependencies: `npm install` (in both `frontend` and `backend` directories).
+3. Start the backend: `cd backend && npm run dev`.
+4. Start the frontend: `cd frontend && npm run dev`.
+5. Open http://localhost:5173 to explore the application.
+
+Please refer to the project’s `README.md` in the `frontend` folder for detailed UI documentation.
+
 ## Phase 5: Scalability report (large dataset round)
 
 Your optimizations worked on 200,401 viewing records. Next year the business expects **20× the volume**.
@@ -374,6 +550,28 @@ If a query misses its target, **find out why from the plan and fix it.** A query
 6. **Conclusion:** is your database ready for next year? What are the remaining risks?
 
 ---
+
+## Frontend Implementation (ScaleUp)
+
+The repository now includes a complete **React/Vite** frontend for the ScaleUp project, featuring:
+- Registration, login, and authentication state management.
+- Protected routes for dashboard, analytics, employee management, and more.
+- Startup creation UI and a fully functional startup dashboard.
+- Financial metrics and monthly decision interfaces.
+- Customer analytics, turn history visualizations, and comprehensive charts.
+- Robust loading, error, and empty states throughout the UI.
+- Automated **Vitest** test suite covering authentication flow, protected routes, startup creation, monthly turn execution, and error handling (13 passing tests).
+
+All UI components integrate with the real backend API (`/api/...`). No dummy data is hard‑coded; the frontend consumes live endpoints.
+
+**How to run the full stack**
+1. Clone the fork.
+2. Install dependencies: `npm install` (in both `frontend` and `backend` directories).
+3. Start the backend: `cd backend && npm run dev`.
+4. Start the frontend: `cd frontend && npm run dev`.
+5. Open http://localhost:5173 to explore the application.
+
+Please refer to the project’s `README.md` in the `frontend` folder for detailed UI documentation.
 
 ## Repository structure (submit exactly this)
 
@@ -424,6 +622,28 @@ netflix-dbms-<team-no>/
 
 ---
 
+## Frontend Implementation (ScaleUp)
+
+The repository now includes a complete **React/Vite** frontend for the ScaleUp project, featuring:
+- Registration, login, and authentication state management.
+- Protected routes for dashboard, analytics, employee management, and more.
+- Startup creation UI and a fully functional startup dashboard.
+- Financial metrics and monthly decision interfaces.
+- Customer analytics, turn history visualizations, and comprehensive charts.
+- Robust loading, error, and empty states throughout the UI.
+- Automated **Vitest** test suite covering authentication flow, protected routes, startup creation, monthly turn execution, and error handling (13 passing tests).
+
+All UI components integrate with the real backend API (`/api/...`). No dummy data is hard‑coded; the frontend consumes live endpoints.
+
+**How to run the full stack**
+1. Clone the fork.
+2. Install dependencies: `npm install` (in both `frontend` and `backend` directories).
+3. Start the backend: `cd backend && npm run dev`.
+4. Start the frontend: `cd frontend && npm run dev`.
+5. Open http://localhost:5173 to explore the application.
+
+Please refer to the project’s `README.md` in the `frontend` folder for detailed UI documentation.
+
 ## Timeline
 
 | Due | Work | Checkpoint |
@@ -438,6 +658,28 @@ netflix-dbms-<team-no>/
 Full list of files per checkpoint, including the AP repo: [`CHECKPOINTS.md`](CHECKPOINTS.md).
 
 ---
+
+## Frontend Implementation (ScaleUp)
+
+The repository now includes a complete **React/Vite** frontend for the ScaleUp project, featuring:
+- Registration, login, and authentication state management.
+- Protected routes for dashboard, analytics, employee management, and more.
+- Startup creation UI and a fully functional startup dashboard.
+- Financial metrics and monthly decision interfaces.
+- Customer analytics, turn history visualizations, and comprehensive charts.
+- Robust loading, error, and empty states throughout the UI.
+- Automated **Vitest** test suite covering authentication flow, protected routes, startup creation, monthly turn execution, and error handling (13 passing tests).
+
+All UI components integrate with the real backend API (`/api/...`). No dummy data is hard‑coded; the frontend consumes live endpoints.
+
+**How to run the full stack**
+1. Clone the fork.
+2. Install dependencies: `npm install` (in both `frontend` and `backend` directories).
+3. Start the backend: `cd backend && npm run dev`.
+4. Start the frontend: `cd frontend && npm run dev`.
+5. Open http://localhost:5173 to explore the application.
+
+Please refer to the project’s `README.md` in the `frontend` folder for detailed UI documentation.
 
 ## Evaluation (40 marks)
 
@@ -461,6 +703,28 @@ The AP project (20) and your Individual analysis (40) make up the rest of the 10
 - You may use AI tools to learn, but you must be able to explain every index and rewrite in your individual analysis.
 
 ---
+
+## Frontend Implementation (ScaleUp)
+
+The repository now includes a complete **React/Vite** frontend for the ScaleUp project, featuring:
+- Registration, login, and authentication state management.
+- Protected routes for dashboard, analytics, employee management, and more.
+- Startup creation UI and a fully functional startup dashboard.
+- Financial metrics and monthly decision interfaces.
+- Customer analytics, turn history visualizations, and comprehensive charts.
+- Robust loading, error, and empty states throughout the UI.
+- Automated **Vitest** test suite covering authentication flow, protected routes, startup creation, monthly turn execution, and error handling (13 passing tests).
+
+All UI components integrate with the real backend API (`/api/...`). No dummy data is hard‑coded; the frontend consumes live endpoints.
+
+**How to run the full stack**
+1. Clone the fork.
+2. Install dependencies: `npm install` (in both `frontend` and `backend` directories).
+3. Start the backend: `cd backend && npm run dev`.
+4. Start the frontend: `cd frontend && npm run dev`.
+5. Open http://localhost:5173 to explore the application.
+
+Please refer to the project’s `README.md` in the `frontend` folder for detailed UI documentation.
 
 ## Appendix: the 30 queries
 
