@@ -1,0 +1,102 @@
+=== R14 run 1 ===
+Sort  (cost=5850.39..5872.97 rows=9033 width=22) (actual time=18.625..18.734 rows=6714 loops=1)
+  Sort Key: v.started_at DESC
+  Sort Method: quicksort  Memory: 456kB
+  Buffers: shared hit=2299 read=11
+  ->  Hash Join  (cost=1055.59..5256.88 rows=9033 width=22) (actual time=1.783..18.109 rows=6714 loops=1)
+        Hash Cond: (v.title_id = t.title_id)
+        Join Filter: (array_position('{U,UA7,UA13,UA16,A}'::text[], (t.maturity_rating)::text) > array_position('{U,UA7,UA13,UA16,A}'::text[], (p.maturity_limit)::text))
+        Rows Removed by Join Filter: 19679
+        Buffers: shared hit=2296 read=11
+        ->  Hash Join  (cost=951.09..5081.18 rows=27100 width=19) (actual time=1.459..14.361 rows=26393 loops=1)
+              Hash Cond: (v.profile_id = p.profile_id)
+              Buffers: shared hit=2208 read=11
+              ->  Seq Scan on viewing_activity v  (cost=0.00..3604.01 rows=200401 width=16) (actual time=0.002..4.536 rows=200401 loops=1)
+                    Buffers: shared hit=1600
+              ->  Hash  (cost=824.31..824.31 rows=10142 width=7) (actual time=1.438..1.438 rows=10000 loops=1)
+                    Buckets: 16384  Batches: 1  Memory Usage: 509kB
+                    Buffers: shared hit=608 read=11
+                    ->  Bitmap Heap Scan on profiles p  (cost=114.89..824.31 rows=10142 width=7) (actual time=0.146..1.053 rows=10000 loops=1)
+                          Recheck Cond: is_kids
+                          Heap Blocks: exact=608
+                          Buffers: shared hit=608 read=11
+                          ->  Bitmap Index Scan on idx_profiles_is_kids  (cost=0.00..112.36 rows=10142 width=0) (actual time=0.116..0.116 rows=10000 loops=1)
+                                Index Cond: (is_kids = true)
+                                Buffers: shared read=11
+        ->  Hash  (cost=67.00..67.00 rows=3000 width=7) (actual time=0.286..0.286 rows=3000 loops=1)
+              Buckets: 4096  Batches: 1  Memory Usage: 149kB
+              Buffers: shared hit=37
+              ->  Seq Scan on titles t  (cost=0.00..67.00 rows=3000 width=7) (actual time=0.003..0.157 rows=3000 loops=1)
+                    Buffers: shared hit=37
+Planning:
+  Buffers: shared hit=422 read=5
+Planning Time: 0.779 ms
+Execution Time: 18.869 ms
+=== R14 run 2 ===
+Sort  (cost=5850.39..5872.97 rows=9033 width=22) (actual time=18.464..18.571 rows=6714 loops=1)
+  Sort Key: v.started_at DESC
+  Sort Method: quicksort  Memory: 456kB
+  Buffers: shared hit=2310
+  ->  Hash Join  (cost=1055.59..5256.88 rows=9033 width=22) (actual time=1.708..17.934 rows=6714 loops=1)
+        Hash Cond: (v.title_id = t.title_id)
+        Join Filter: (array_position('{U,UA7,UA13,UA16,A}'::text[], (t.maturity_rating)::text) > array_position('{U,UA7,UA13,UA16,A}'::text[], (p.maturity_limit)::text))
+        Rows Removed by Join Filter: 19679
+        Buffers: shared hit=2307
+        ->  Hash Join  (cost=951.09..5081.18 rows=27100 width=19) (actual time=1.428..14.254 rows=26393 loops=1)
+              Hash Cond: (v.profile_id = p.profile_id)
+              Buffers: shared hit=2219
+              ->  Seq Scan on viewing_activity v  (cost=0.00..3604.01 rows=200401 width=16) (actual time=0.005..4.485 rows=200401 loops=1)
+                    Buffers: shared hit=1600
+              ->  Hash  (cost=824.31..824.31 rows=10142 width=7) (actual time=1.413..1.414 rows=10000 loops=1)
+                    Buckets: 16384  Batches: 1  Memory Usage: 509kB
+                    Buffers: shared hit=619
+                    ->  Bitmap Heap Scan on profiles p  (cost=114.89..824.31 rows=10142 width=7) (actual time=0.130..1.027 rows=10000 loops=1)
+                          Recheck Cond: is_kids
+                          Heap Blocks: exact=608
+                          Buffers: shared hit=619
+                          ->  Bitmap Index Scan on idx_profiles_is_kids  (cost=0.00..112.36 rows=10142 width=0) (actual time=0.101..0.101 rows=10000 loops=1)
+                                Index Cond: (is_kids = true)
+                                Buffers: shared hit=11
+        ->  Hash  (cost=67.00..67.00 rows=3000 width=7) (actual time=0.246..0.247 rows=3000 loops=1)
+              Buckets: 4096  Batches: 1  Memory Usage: 149kB
+              Buffers: shared hit=37
+              ->  Seq Scan on titles t  (cost=0.00..67.00 rows=3000 width=7) (actual time=0.002..0.130 rows=3000 loops=1)
+                    Buffers: shared hit=37
+Planning:
+  Buffers: shared hit=427
+Planning Time: 0.709 ms
+Execution Time: 18.699 ms
+=== R14 run 3 ===
+Sort  (cost=5850.39..5872.97 rows=9033 width=22) (actual time=18.378..18.486 rows=6714 loops=1)
+  Sort Key: v.started_at DESC
+  Sort Method: quicksort  Memory: 456kB
+  Buffers: shared hit=2310
+  ->  Hash Join  (cost=1055.59..5256.88 rows=9033 width=22) (actual time=1.740..17.827 rows=6714 loops=1)
+        Hash Cond: (v.title_id = t.title_id)
+        Join Filter: (array_position('{U,UA7,UA13,UA16,A}'::text[], (t.maturity_rating)::text) > array_position('{U,UA7,UA13,UA16,A}'::text[], (p.maturity_limit)::text))
+        Rows Removed by Join Filter: 19679
+        Buffers: shared hit=2307
+        ->  Hash Join  (cost=951.09..5081.18 rows=27100 width=19) (actual time=1.453..14.181 rows=26393 loops=1)
+              Hash Cond: (v.profile_id = p.profile_id)
+              Buffers: shared hit=2219
+              ->  Seq Scan on viewing_activity v  (cost=0.00..3604.01 rows=200401 width=16) (actual time=0.002..4.514 rows=200401 loops=1)
+                    Buffers: shared hit=1600
+              ->  Hash  (cost=824.31..824.31 rows=10142 width=7) (actual time=1.441..1.441 rows=10000 loops=1)
+                    Buckets: 16384  Batches: 1  Memory Usage: 509kB
+                    Buffers: shared hit=619
+                    ->  Bitmap Heap Scan on profiles p  (cost=114.89..824.31 rows=10142 width=7) (actual time=0.130..1.044 rows=10000 loops=1)
+                          Recheck Cond: is_kids
+                          Heap Blocks: exact=608
+                          Buffers: shared hit=619
+                          ->  Bitmap Index Scan on idx_profiles_is_kids  (cost=0.00..112.36 rows=10142 width=0) (actual time=0.100..0.100 rows=10000 loops=1)
+                                Index Cond: (is_kids = true)
+                                Buffers: shared hit=11
+        ->  Hash  (cost=67.00..67.00 rows=3000 width=7) (actual time=0.255..0.255 rows=3000 loops=1)
+              Buckets: 4096  Batches: 1  Memory Usage: 149kB
+              Buffers: shared hit=37
+              ->  Seq Scan on titles t  (cost=0.00..67.00 rows=3000 width=7) (actual time=0.002..0.139 rows=3000 loops=1)
+                    Buffers: shared hit=37
+Planning:
+  Buffers: shared hit=427
+Planning Time: 0.771 ms
+Execution Time: 18.613 ms

@@ -1,0 +1,63 @@
+=== R12 run 1 ===
+GroupAggregate  (cost=403.13..403.62 rows=15 width=48) (actual time=0.647..0.673 rows=6 loops=1)
+  Group Key: (date_trunc('month'::text, (cancelled_on)::timestamp with time zone))
+  Buffers: shared hit=319 read=4
+  ->  Sort  (cost=403.13..403.17 rows=15 width=16) (actual time=0.638..0.648 rows=597 loops=1)
+        Sort Key: (date_trunc('month'::text, (cancelled_on)::timestamp with time zone))
+        Sort Method: quicksort  Memory: 43kB
+        Buffers: shared hit=319 read=4
+        ->  Bitmap Heap Scan on accounts  (cost=34.63..402.84 rows=15 width=16) (actual time=0.071..0.604 rows=597 loops=1)
+              Recheck Cond: ((status)::text = 'CANCELLED'::text)
+              Filter: (EXTRACT(year FROM cancelled_on) = '2026'::numeric)
+              Rows Removed by Filter: 2382
+              Heap Blocks: exact=316
+              Buffers: shared hit=316 read=4
+              ->  Bitmap Index Scan on idx_accounts_status_billing  (cost=0.00..34.63 rows=2979 width=0) (actual time=0.048..0.048 rows=2979 loops=1)
+                    Index Cond: ((status)::text = 'CANCELLED'::text)
+                    Buffers: shared read=4
+Planning:
+  Buffers: shared hit=186
+Planning Time: 0.280 ms
+Execution Time: 0.692 ms
+=== R12 run 2 ===
+GroupAggregate  (cost=403.13..403.62 rows=15 width=48) (actual time=0.620..0.647 rows=6 loops=1)
+  Group Key: (date_trunc('month'::text, (cancelled_on)::timestamp with time zone))
+  Buffers: shared hit=323
+  ->  Sort  (cost=403.13..403.17 rows=15 width=16) (actual time=0.611..0.621 rows=597 loops=1)
+        Sort Key: (date_trunc('month'::text, (cancelled_on)::timestamp with time zone))
+        Sort Method: quicksort  Memory: 43kB
+        Buffers: shared hit=323
+        ->  Bitmap Heap Scan on accounts  (cost=34.63..402.84 rows=15 width=16) (actual time=0.054..0.579 rows=597 loops=1)
+              Recheck Cond: ((status)::text = 'CANCELLED'::text)
+              Filter: (EXTRACT(year FROM cancelled_on) = '2026'::numeric)
+              Rows Removed by Filter: 2382
+              Heap Blocks: exact=316
+              Buffers: shared hit=320
+              ->  Bitmap Index Scan on idx_accounts_status_billing  (cost=0.00..34.63 rows=2979 width=0) (actual time=0.033..0.033 rows=2979 loops=1)
+                    Index Cond: ((status)::text = 'CANCELLED'::text)
+                    Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=186
+Planning Time: 0.256 ms
+Execution Time: 0.665 ms
+=== R12 run 3 ===
+GroupAggregate  (cost=403.13..403.62 rows=15 width=48) (actual time=0.610..0.636 rows=6 loops=1)
+  Group Key: (date_trunc('month'::text, (cancelled_on)::timestamp with time zone))
+  Buffers: shared hit=323
+  ->  Sort  (cost=403.13..403.17 rows=15 width=16) (actual time=0.600..0.610 rows=597 loops=1)
+        Sort Key: (date_trunc('month'::text, (cancelled_on)::timestamp with time zone))
+        Sort Method: quicksort  Memory: 43kB
+        Buffers: shared hit=323
+        ->  Bitmap Heap Scan on accounts  (cost=34.63..402.84 rows=15 width=16) (actual time=0.056..0.567 rows=597 loops=1)
+              Recheck Cond: ((status)::text = 'CANCELLED'::text)
+              Filter: (EXTRACT(year FROM cancelled_on) = '2026'::numeric)
+              Rows Removed by Filter: 2382
+              Heap Blocks: exact=316
+              Buffers: shared hit=320
+              ->  Bitmap Index Scan on idx_accounts_status_billing  (cost=0.00..34.63 rows=2979 width=0) (actual time=0.035..0.035 rows=2979 loops=1)
+                    Index Cond: ((status)::text = 'CANCELLED'::text)
+                    Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=186
+Planning Time: 0.262 ms
+Execution Time: 0.655 ms

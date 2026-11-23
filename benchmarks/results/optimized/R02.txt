@@ -1,0 +1,48 @@
+=== R02 run 1 ===
+Sort  (cost=8.82..8.83 rows=4 width=14) (actual time=0.037..0.037 rows=2 loops=1)
+  Sort Key: season_no
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=4 read=2
+  ->  HashAggregate  (cost=8.74..8.78 rows=4 width=14) (actual time=0.026..0.026 rows=2 loops=1)
+        Group Key: season_no
+        Batches: 1  Memory Usage: 24kB
+        Buffers: shared hit=1 read=2
+        ->  Index Scan using idx_episodes_title_id on episodes  (cost=0.29..8.61 rows=18 width=6) (actual time=0.017..0.018 rows=13 loops=1)
+              Index Cond: (title_id = 2909)
+              Buffers: shared hit=1 read=2
+Planning:
+  Buffers: shared hit=120 read=2 dirtied=1
+Planning Time: 0.337 ms
+Execution Time: 0.060 ms
+=== R02 run 2 ===
+Sort  (cost=8.82..8.83 rows=4 width=14) (actual time=0.018..0.018 rows=2 loops=1)
+  Sort Key: season_no
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=6
+  ->  HashAggregate  (cost=8.74..8.78 rows=4 width=14) (actual time=0.011..0.012 rows=2 loops=1)
+        Group Key: season_no
+        Batches: 1  Memory Usage: 24kB
+        Buffers: shared hit=3
+        ->  Index Scan using idx_episodes_title_id on episodes  (cost=0.29..8.61 rows=18 width=6) (actual time=0.005..0.006 rows=13 loops=1)
+              Index Cond: (title_id = 2909)
+              Buffers: shared hit=3
+Planning:
+  Buffers: shared hit=122
+Planning Time: 0.224 ms
+Execution Time: 0.040 ms
+=== R02 run 3 ===
+Sort  (cost=8.82..8.83 rows=4 width=14) (actual time=0.019..0.019 rows=2 loops=1)
+  Sort Key: season_no
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=6
+  ->  HashAggregate  (cost=8.74..8.78 rows=4 width=14) (actual time=0.012..0.012 rows=2 loops=1)
+        Group Key: season_no
+        Batches: 1  Memory Usage: 24kB
+        Buffers: shared hit=3
+        ->  Index Scan using idx_episodes_title_id on episodes  (cost=0.29..8.61 rows=18 width=6) (actual time=0.006..0.006 rows=13 loops=1)
+              Index Cond: (title_id = 2909)
+              Buffers: shared hit=3
+Planning:
+  Buffers: shared hit=122
+Planning Time: 0.196 ms
+Execution Time: 0.040 ms
