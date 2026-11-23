@@ -1,6 +1,3 @@
--- Netflix Streaming Database
--- PostgreSQL schema
--- Team T0027
 CREATE SCHEMA IF NOT EXISTS netflix;
 SET search_path TO netflix;
 -- PostgreSQL schema

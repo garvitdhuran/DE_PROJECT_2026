@@ -1,7 +1,5 @@
 seed_data/
 large_data/
 .DS_Store
-
-# PostgreSQL local database files
 pgdata/
 logfile
