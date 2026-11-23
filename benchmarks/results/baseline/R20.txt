@@ -1,0 +1,81 @@
+=== R20 run 1 ===
+Limit  (cost=1401.22..1401.24 rows=10 width=528) (actual time=3.116..3.117 rows=10 loops=1)
+  Buffers: shared hit=403
+  ->  Sort  (cost=1401.22..1402.03 rows=326 width=528) (actual time=3.115..3.116 rows=10 loops=1)
+        Sort Key: (count(*)) DESC
+        Sort Method: top-N heapsort  Memory: 25kB
+        Buffers: shared hit=403
+        ->  HashAggregate  (cost=1390.91..1394.17 rows=326 width=528) (actual time=2.931..3.015 rows=1917 loops=1)
+              Group Key: m.title_id, t.name
+              Batches: 1  Memory Usage: 369kB
+              Buffers: shared hit=400
+              ->  Hash Join  (cost=58.80..1388.47 rows=326 width=520) (actual time=0.296..2.554 rows=3328 loops=1)
+                    Hash Cond: (m.title_id = t.title_id)
+                    Buffers: shared hit=400
+                    ->  Seq Scan on my_list m  (cost=0.00..1328.80 rows=326 width=4) (actual time=0.006..2.009 rows=3328 loops=1)
+                          Filter: ((added_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (added_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+                          Rows Removed by Filter: 56664
+                          Buffers: shared hit=352
+                    ->  Hash  (cost=52.80..52.80 rows=480 width=520) (actual time=0.287..0.287 rows=3000 loops=1)
+                          Buckets: 4096 (originally 1024)  Batches: 1 (originally 1)  Memory Usage: 218kB
+                          Buffers: shared hit=48
+                          ->  Seq Scan on titles t  (cost=0.00..52.80 rows=480 width=520) (actual time=0.003..0.138 rows=3000 loops=1)
+                                Buffers: shared hit=48
+Planning:
+  Buffers: shared hit=142
+Planning Time: 0.255 ms
+Execution Time: 3.140 ms
+=== R20 run 2 ===
+Limit  (cost=1401.22..1401.24 rows=10 width=528) (actual time=2.791..2.792 rows=10 loops=1)
+  Buffers: shared hit=403
+  ->  Sort  (cost=1401.22..1402.03 rows=326 width=528) (actual time=2.790..2.791 rows=10 loops=1)
+        Sort Key: (count(*)) DESC
+        Sort Method: top-N heapsort  Memory: 25kB
+        Buffers: shared hit=403
+        ->  HashAggregate  (cost=1390.91..1394.17 rows=326 width=528) (actual time=2.605..2.690 rows=1917 loops=1)
+              Group Key: m.title_id, t.name
+              Batches: 1  Memory Usage: 369kB
+              Buffers: shared hit=400
+              ->  Hash Join  (cost=58.80..1388.47 rows=326 width=520) (actual time=0.301..2.221 rows=3328 loops=1)
+                    Hash Cond: (m.title_id = t.title_id)
+                    Buffers: shared hit=400
+                    ->  Seq Scan on my_list m  (cost=0.00..1328.80 rows=326 width=4) (actual time=0.004..1.674 rows=3328 loops=1)
+                          Filter: ((added_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (added_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+                          Rows Removed by Filter: 56664
+                          Buffers: shared hit=352
+                    ->  Hash  (cost=52.80..52.80 rows=480 width=520) (actual time=0.294..0.294 rows=3000 loops=1)
+                          Buckets: 4096 (originally 1024)  Batches: 1 (originally 1)  Memory Usage: 218kB
+                          Buffers: shared hit=48
+                          ->  Seq Scan on titles t  (cost=0.00..52.80 rows=480 width=520) (actual time=0.004..0.138 rows=3000 loops=1)
+                                Buffers: shared hit=48
+Planning:
+  Buffers: shared hit=142
+Planning Time: 0.226 ms
+Execution Time: 2.816 ms
+=== R20 run 3 ===
+Limit  (cost=1401.22..1401.24 rows=10 width=528) (actual time=2.952..2.953 rows=10 loops=1)
+  Buffers: shared hit=403
+  ->  Sort  (cost=1401.22..1402.03 rows=326 width=528) (actual time=2.951..2.952 rows=10 loops=1)
+        Sort Key: (count(*)) DESC
+        Sort Method: top-N heapsort  Memory: 25kB
+        Buffers: shared hit=403
+        ->  HashAggregate  (cost=1390.91..1394.17 rows=326 width=528) (actual time=2.736..2.835 rows=1917 loops=1)
+              Group Key: m.title_id, t.name
+              Batches: 1  Memory Usage: 369kB
+              Buffers: shared hit=400
+              ->  Hash Join  (cost=58.80..1388.47 rows=326 width=520) (actual time=0.338..2.330 rows=3328 loops=1)
+                    Hash Cond: (m.title_id = t.title_id)
+                    Buffers: shared hit=400
+                    ->  Seq Scan on my_list m  (cost=0.00..1328.80 rows=326 width=4) (actual time=0.006..1.717 rows=3328 loops=1)
+                          Filter: ((added_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (added_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+                          Rows Removed by Filter: 56664
+                          Buffers: shared hit=352
+                    ->  Hash  (cost=52.80..52.80 rows=480 width=520) (actual time=0.328..0.328 rows=3000 loops=1)
+                          Buckets: 4096 (originally 1024)  Batches: 1 (originally 1)  Memory Usage: 218kB
+                          Buffers: shared hit=48
+                          ->  Seq Scan on titles t  (cost=0.00..52.80 rows=480 width=520) (actual time=0.004..0.159 rows=3000 loops=1)
+                                Buffers: shared hit=48
+Planning:
+  Buffers: shared hit=142
+Planning Time: 0.295 ms
+Execution Time: 2.982 ms

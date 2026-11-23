@@ -1,0 +1,81 @@
+=== R19 run 1 ===
+Sort  (cost=1344643.09..1344643.69 rows=240 width=536) (actual time=6451.818..6451.831 rows=610 loops=1)
+  Sort Key: ((SubPlan 1)) DESC
+  Sort Method: quicksort  Memory: 63kB
+  Buffers: shared hit=1952051
+  ->  Seq Scan on titles t  (cost=0.00..1344633.60 rows=240 width=536) (actual time=11.622..6451.545 rows=610 loops=1)
+        Filter: is_netflix_original
+        Rows Removed by Filter: 2390
+        Buffers: shared hit=1952048
+        SubPlan 1
+          ->  Aggregate  (cost=2801.20..2801.21 rows=1 width=8) (actual time=5.286..5.286 rows=1 loops=610)
+                Buffers: shared hit=976000
+                ->  Seq Scan on viewing_activity v  (cost=0.00..2800.00 rows=480 width=0) (actual time=0.761..5.283 rows=65 loops=610)
+                      Filter: (title_id = t.title_id)
+                      Rows Removed by Filter: 200336
+                      Buffers: shared hit=976000
+        SubPlan 2
+          ->  Aggregate  (cost=2801.20..2801.21 rows=1 width=8) (actual time=5.289..5.289 rows=1 loops=610)
+                Buffers: shared hit=976000
+                ->  Seq Scan on viewing_activity v_1  (cost=0.00..2800.00 rows=480 width=8) (actual time=0.766..5.285 rows=65 loops=610)
+                      Filter: (title_id = t.title_id)
+                      Rows Removed by Filter: 200336
+                      Buffers: shared hit=976000
+Planning:
+  Buffers: shared hit=151
+Planning Time: 0.257 ms
+Execution Time: 6452.250 ms
+=== R19 run 2 ===
+Sort  (cost=1344643.09..1344643.69 rows=240 width=536) (actual time=6583.542..6583.558 rows=610 loops=1)
+  Sort Key: ((SubPlan 1)) DESC
+  Sort Method: quicksort  Memory: 63kB
+  Buffers: shared hit=1952051
+  ->  Seq Scan on titles t  (cost=0.00..1344633.60 rows=240 width=536) (actual time=18.010..6583.196 rows=610 loops=1)
+        Filter: is_netflix_original
+        Rows Removed by Filter: 2390
+        Buffers: shared hit=1952048
+        SubPlan 1
+          ->  Aggregate  (cost=2801.20..2801.21 rows=1 width=8) (actual time=5.382..5.382 rows=1 loops=610)
+                Buffers: shared hit=976000
+                ->  Seq Scan on viewing_activity v  (cost=0.00..2800.00 rows=480 width=0) (actual time=0.779..5.378 rows=65 loops=610)
+                      Filter: (title_id = t.title_id)
+                      Rows Removed by Filter: 200336
+                      Buffers: shared hit=976000
+        SubPlan 2
+          ->  Aggregate  (cost=2801.20..2801.21 rows=1 width=8) (actual time=5.408..5.408 rows=1 loops=610)
+                Buffers: shared hit=976000
+                ->  Seq Scan on viewing_activity v_1  (cost=0.00..2800.00 rows=480 width=8) (actual time=0.779..5.403 rows=65 loops=610)
+                      Filter: (title_id = t.title_id)
+                      Rows Removed by Filter: 200336
+                      Buffers: shared hit=976000
+Planning:
+  Buffers: shared hit=151
+Planning Time: 0.230 ms
+Execution Time: 6583.595 ms
+=== R19 run 3 ===
+Sort  (cost=1344643.09..1344643.69 rows=240 width=536) (actual time=6674.407..6674.426 rows=610 loops=1)
+  Sort Key: ((SubPlan 1)) DESC
+  Sort Method: quicksort  Memory: 63kB
+  Buffers: shared hit=1952051
+  ->  Seq Scan on titles t  (cost=0.00..1344633.60 rows=240 width=536) (actual time=11.455..6674.061 rows=610 loops=1)
+        Filter: is_netflix_original
+        Rows Removed by Filter: 2390
+        Buffers: shared hit=1952048
+        SubPlan 1
+          ->  Aggregate  (cost=2801.20..2801.21 rows=1 width=8) (actual time=5.469..5.469 rows=1 loops=610)
+                Buffers: shared hit=976000
+                ->  Seq Scan on viewing_activity v  (cost=0.00..2800.00 rows=480 width=0) (actual time=0.787..5.465 rows=65 loops=610)
+                      Filter: (title_id = t.title_id)
+                      Rows Removed by Filter: 200336
+                      Buffers: shared hit=976000
+        SubPlan 2
+          ->  Aggregate  (cost=2801.20..2801.21 rows=1 width=8) (actual time=5.469..5.469 rows=1 loops=610)
+                Buffers: shared hit=976000
+                ->  Seq Scan on viewing_activity v_1  (cost=0.00..2800.00 rows=480 width=8) (actual time=0.793..5.464 rows=65 loops=610)
+                      Filter: (title_id = t.title_id)
+                      Rows Removed by Filter: 200336
+                      Buffers: shared hit=976000
+Planning:
+  Buffers: shared hit=151
+Planning Time: 0.236 ms
+Execution Time: 6674.463 ms

@@ -1,0 +1,87 @@
+=== W05 run 1 ===
+Update on accounts a  (cost=2879.83..2896.20 rows=0 width=0) (actual time=7.080..7.080 rows=0 loops=1)
+  Buffers: shared hit=9968 dirtied=8
+  ->  Nested Loop  (cost=2879.83..2896.20 rows=1 width=70) (actual time=4.964..6.216 rows=634 loops=1)
+        Buffers: shared hit=5578
+        ->  Unique  (cost=2879.54..2879.55 rows=2 width=10) (actual time=4.574..4.666 rows=1376 loops=1)
+              Buffers: shared hit=1450
+              ->  Sort  (cost=2879.54..2879.55 rows=2 width=10) (actual time=4.574..4.602 rows=1376 loops=1)
+                    Sort Key: i.account_id
+                    Sort Method: quicksort  Memory: 92kB
+                    Buffers: shared hit=1450
+                    ->  Seq Scan on invoices i  (cost=0.00..2879.53 rows=2 width=10) (actual time=3.146..4.516 rows=1376 loops=1)
+                          Filter: ((billing_period_start = '2026-06-01'::date) AND ((status)::text = 'FAILED'::text))
+                          Rows Removed by Filter: 131681
+                          Buffers: shared hit=1447
+        ->  Memoize  (cost=0.29..8.31 rows=1 width=10) (actual time=0.001..0.001 rows=0 loops=1376)
+              Cache Key: i.account_id
+              Cache Mode: logical
+              Hits: 0  Misses: 1376  Evictions: 0  Overflows: 0  Memory Usage: 119kB
+              Buffers: shared hit=4128
+              ->  Index Scan using accounts_pkey on accounts a  (cost=0.28..8.30 rows=1 width=10) (actual time=0.001..0.001 rows=0 loops=1376)
+                    Index Cond: (account_id = i.account_id)
+                    Filter: ((status)::text = 'ACTIVE'::text)
+                    Rows Removed by Filter: 1
+                    Buffers: shared hit=4128
+Planning:
+  Buffers: shared hit=197
+Planning Time: 0.255 ms
+Execution Time: 7.123 ms
+=== W05 run 2 ===
+Update on accounts a  (cost=2879.83..2896.20 rows=0 width=0) (actual time=6.844..6.844 rows=0 loops=1)
+  Buffers: shared hit=10584 dirtied=8
+  ->  Nested Loop  (cost=2879.83..2896.20 rows=1 width=70) (actual time=4.602..5.975 rows=634 loops=1)
+        Buffers: shared hit=5578
+        ->  Unique  (cost=2879.54..2879.55 rows=2 width=10) (actual time=4.587..4.672 rows=1376 loops=1)
+              Buffers: shared hit=1450
+              ->  Sort  (cost=2879.54..2879.55 rows=2 width=10) (actual time=4.587..4.613 rows=1376 loops=1)
+                    Sort Key: i.account_id
+                    Sort Method: quicksort  Memory: 92kB
+                    Buffers: shared hit=1450
+                    ->  Seq Scan on invoices i  (cost=0.00..2879.53 rows=2 width=10) (actual time=3.328..4.527 rows=1376 loops=1)
+                          Filter: ((billing_period_start = '2026-06-01'::date) AND ((status)::text = 'FAILED'::text))
+                          Rows Removed by Filter: 131681
+                          Buffers: shared hit=1447
+        ->  Memoize  (cost=0.29..8.31 rows=1 width=10) (actual time=0.001..0.001 rows=0 loops=1376)
+              Cache Key: i.account_id
+              Cache Mode: logical
+              Hits: 0  Misses: 1376  Evictions: 0  Overflows: 0  Memory Usage: 119kB
+              Buffers: shared hit=4128
+              ->  Index Scan using accounts_pkey on accounts a  (cost=0.28..8.30 rows=1 width=10) (actual time=0.001..0.001 rows=0 loops=1376)
+                    Index Cond: (account_id = i.account_id)
+                    Filter: ((status)::text = 'ACTIVE'::text)
+                    Rows Removed by Filter: 1
+                    Buffers: shared hit=4128
+Planning:
+  Buffers: shared hit=197
+Planning Time: 0.258 ms
+Execution Time: 6.886 ms
+=== W05 run 3 ===
+Update on accounts a  (cost=2879.83..2896.20 rows=0 width=0) (actual time=6.851..6.852 rows=0 loops=1)
+  Buffers: shared hit=10585 dirtied=8
+  ->  Nested Loop  (cost=2879.83..2896.20 rows=1 width=70) (actual time=4.520..5.889 rows=634 loops=1)
+        Buffers: shared hit=5578
+        ->  Unique  (cost=2879.54..2879.55 rows=2 width=10) (actual time=4.506..4.596 rows=1376 loops=1)
+              Buffers: shared hit=1450
+              ->  Sort  (cost=2879.54..2879.55 rows=2 width=10) (actual time=4.506..4.532 rows=1376 loops=1)
+                    Sort Key: i.account_id
+                    Sort Method: quicksort  Memory: 92kB
+                    Buffers: shared hit=1450
+                    ->  Seq Scan on invoices i  (cost=0.00..2879.53 rows=2 width=10) (actual time=3.206..4.449 rows=1376 loops=1)
+                          Filter: ((billing_period_start = '2026-06-01'::date) AND ((status)::text = 'FAILED'::text))
+                          Rows Removed by Filter: 131681
+                          Buffers: shared hit=1447
+        ->  Memoize  (cost=0.29..8.31 rows=1 width=10) (actual time=0.001..0.001 rows=0 loops=1376)
+              Cache Key: i.account_id
+              Cache Mode: logical
+              Hits: 0  Misses: 1376  Evictions: 0  Overflows: 0  Memory Usage: 119kB
+              Buffers: shared hit=4128
+              ->  Index Scan using accounts_pkey on accounts a  (cost=0.28..8.30 rows=1 width=10) (actual time=0.001..0.001 rows=0 loops=1376)
+                    Index Cond: (account_id = i.account_id)
+                    Filter: ((status)::text = 'ACTIVE'::text)
+                    Rows Removed by Filter: 1
+                    Buffers: shared hit=4128
+Planning:
+  Buffers: shared hit=197
+Planning Time: 0.258 ms
+Execution Time: 6.896 ms

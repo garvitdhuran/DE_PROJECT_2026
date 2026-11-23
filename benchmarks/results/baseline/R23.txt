@@ -1,0 +1,39 @@
+=== R23 run 1 ===
+Limit  (cost=12714.86..12714.86 rows=1 width=24) (actual time=36.040..36.042 rows=25 loops=1)
+  Buffers: shared hit=1603, temp read=752 written=839
+  ->  Sort  (cost=12474.86..12714.86 rows=96000 width=24) (actual time=29.018..33.517 rows=150025 loops=1)
+        Sort Key: started_at DESC
+        Sort Method: external merge  Disk: 6680kB
+        Buffers: shared hit=1603, temp read=752 written=839
+        ->  Seq Scan on viewing_activity  (cost=0.00..2560.00 rows=96000 width=24) (actual time=0.004..9.894 rows=200401 loops=1)
+              Buffers: shared hit=1600
+Planning:
+  Buffers: shared hit=90
+Planning Time: 0.156 ms
+Execution Time: 37.230 ms
+=== R23 run 2 ===
+Limit  (cost=12714.86..12714.86 rows=1 width=24) (actual time=36.451..36.453 rows=25 loops=1)
+  Buffers: shared hit=1603, temp read=752 written=839
+  ->  Sort  (cost=12474.86..12714.86 rows=96000 width=24) (actual time=29.423..33.941 rows=150025 loops=1)
+        Sort Key: started_at DESC
+        Sort Method: external merge  Disk: 6680kB
+        Buffers: shared hit=1603, temp read=752 written=839
+        ->  Seq Scan on viewing_activity  (cost=0.00..2560.00 rows=96000 width=24) (actual time=0.004..10.152 rows=200401 loops=1)
+              Buffers: shared hit=1600
+Planning:
+  Buffers: shared hit=90
+Planning Time: 0.141 ms
+Execution Time: 37.658 ms
+=== R23 run 3 ===
+Limit  (cost=12714.86..12714.86 rows=1 width=24) (actual time=36.337..36.339 rows=25 loops=1)
+  Buffers: shared hit=1603, temp read=752 written=839
+  ->  Sort  (cost=12474.86..12714.86 rows=96000 width=24) (actual time=29.268..33.803 rows=150025 loops=1)
+        Sort Key: started_at DESC
+        Sort Method: external merge  Disk: 6680kB
+        Buffers: shared hit=1603, temp read=752 written=839
+        ->  Seq Scan on viewing_activity  (cost=0.00..2560.00 rows=96000 width=24) (actual time=0.003..10.161 rows=200401 loops=1)
+              Buffers: shared hit=1600
+Planning:
+  Buffers: shared hit=90
+Planning Time: 0.129 ms
+Execution Time: 37.505 ms

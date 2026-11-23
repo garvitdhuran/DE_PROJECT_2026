@@ -1,0 +1,75 @@
+2026-11-23 20:52:06.843 IST [74201] LOG:  starting PostgreSQL 17.11 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit
+2026-11-23 20:52:06.844 IST [74201] LOG:  could not bind IPv6 address "::1": Address already in use
+2026-11-23 20:52:06.844 IST [74201] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2026-11-23 20:52:06.844 IST [74201] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2026-11-23 20:52:06.844 IST [74201] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2026-11-23 20:52:06.845 IST [74201] WARNING:  could not create listen socket for "localhost"
+2026-11-23 20:52:06.845 IST [74201] FATAL:  could not create any TCP/IP sockets
+2026-11-23 20:52:06.845 IST [74201] LOG:  database system is shut down
+2026-11-23 20:52:09.273 IST [74204] LOG:  starting PostgreSQL 17.11 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit
+2026-11-23 20:52:09.274 IST [74204] LOG:  could not bind IPv6 address "::1": Address already in use
+2026-11-23 20:52:09.274 IST [74204] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2026-11-23 20:52:09.274 IST [74204] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2026-11-23 20:52:09.274 IST [74204] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2026-11-23 20:52:09.275 IST [74204] WARNING:  could not create listen socket for "localhost"
+2026-11-23 20:52:09.275 IST [74204] FATAL:  could not create any TCP/IP sockets
+2026-11-23 20:52:09.275 IST [74204] LOG:  database system is shut down
+2026-11-23 20:52:31.248 IST [74218] LOG:  starting PostgreSQL 17.11 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit
+2026-11-23 20:52:31.249 IST [74218] LOG:  could not bind IPv6 address "::1": Address already in use
+2026-11-23 20:52:31.249 IST [74218] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2026-11-23 20:52:31.249 IST [74218] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2026-11-23 20:52:31.249 IST [74218] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2026-11-23 20:52:31.249 IST [74218] WARNING:  could not create listen socket for "localhost"
+2026-11-23 20:52:31.249 IST [74218] FATAL:  could not create any TCP/IP sockets
+2026-11-23 20:52:31.249 IST [74218] LOG:  database system is shut down
+2026-11-23 20:56:36.741 IST [74301] LOG:  starting PostgreSQL 17.11 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit
+2026-11-23 20:56:36.743 IST [74301] LOG:  listening on IPv6 address "::1", port 5433
+2026-11-23 20:56:36.743 IST [74301] LOG:  listening on IPv4 address "127.0.0.1", port 5433
+2026-11-23 20:56:36.743 IST [74301] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5433"
+2026-11-23 20:56:36.746 IST [74304] LOG:  database system was shut down at 2026-11-23 20:51:58 IST
+2026-11-23 20:56:36.749 IST [74301] LOG:  database system is ready to accept connections
+2026-11-23 20:59:27.576 IST [74389] ERROR:  relation "plans" does not exist
+2026-11-23 20:59:27.576 IST [74389] STATEMENT:  COPY  plans FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 20:59:27.576 IST [74389] ERROR:  relation "accounts" does not exist
+2026-11-23 20:59:27.576 IST [74389] STATEMENT:  COPY  accounts FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 20:59:27.576 IST [74389] ERROR:  relation "profiles" does not exist
+2026-11-23 20:59:27.576 IST [74389] STATEMENT:  COPY  profiles FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 20:59:27.576 IST [74389] ERROR:  relation "genres" does not exist
+2026-11-23 20:59:27.576 IST [74389] STATEMENT:  COPY  genres FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 20:59:27.576 IST [74389] ERROR:  relation "titles" does not exist
+2026-11-23 20:59:27.576 IST [74389] STATEMENT:  COPY  titles FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 20:59:27.576 IST [74389] ERROR:  relation "title_genres" does not exist
+2026-11-23 20:59:27.576 IST [74389] STATEMENT:  COPY  title_genres FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 20:59:27.576 IST [74389] ERROR:  relation "episodes" does not exist
+2026-11-23 20:59:27.576 IST [74389] STATEMENT:  COPY  episodes FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 20:59:27.576 IST [74389] ERROR:  relation "viewing_activity" does not exist
+2026-11-23 20:59:27.576 IST [74389] STATEMENT:  COPY  viewing_activity FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 20:59:27.577 IST [74389] ERROR:  relation "ratings" does not exist
+2026-11-23 20:59:27.577 IST [74389] STATEMENT:  COPY  ratings FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 20:59:27.577 IST [74389] ERROR:  relation "my_list" does not exist
+2026-11-23 20:59:27.577 IST [74389] STATEMENT:  COPY  my_list FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 20:59:27.577 IST [74389] ERROR:  relation "invoices" does not exist
+2026-11-23 20:59:27.577 IST [74389] STATEMENT:  COPY  invoices FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 20:59:36.075 IST [74404] ERROR:  relation "plans" does not exist
+2026-11-23 20:59:36.075 IST [74404] STATEMENT:  COPY  plans FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 20:59:36.076 IST [74404] ERROR:  relation "accounts" does not exist
+2026-11-23 20:59:36.076 IST [74404] STATEMENT:  COPY  accounts FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 20:59:36.076 IST [74404] ERROR:  relation "profiles" does not exist
+2026-11-23 20:59:36.076 IST [74404] STATEMENT:  COPY  profiles FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 20:59:36.076 IST [74404] ERROR:  relation "genres" does not exist
+2026-11-23 20:59:36.076 IST [74404] STATEMENT:  COPY  genres FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 20:59:36.076 IST [74404] ERROR:  relation "titles" does not exist
+2026-11-23 20:59:36.076 IST [74404] STATEMENT:  COPY  titles FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 20:59:36.076 IST [74404] ERROR:  relation "title_genres" does not exist
+2026-11-23 20:59:36.076 IST [74404] STATEMENT:  COPY  title_genres FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 20:59:36.076 IST [74404] ERROR:  relation "episodes" does not exist
+2026-11-23 20:59:36.076 IST [74404] STATEMENT:  COPY  episodes FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 20:59:36.076 IST [74404] ERROR:  relation "viewing_activity" does not exist
+2026-11-23 20:59:36.076 IST [74404] STATEMENT:  COPY  viewing_activity FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 20:59:36.076 IST [74404] ERROR:  relation "ratings" does not exist
+2026-11-23 20:59:36.076 IST [74404] STATEMENT:  COPY  ratings FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 20:59:36.077 IST [74404] ERROR:  relation "my_list" does not exist
+2026-11-23 20:59:36.077 IST [74404] STATEMENT:  COPY  my_list FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 20:59:36.077 IST [74404] ERROR:  relation "invoices" does not exist
+2026-11-23 20:59:36.077 IST [74404] STATEMENT:  COPY  invoices FROM STDIN WITH (FORMAT csv, HEADER true);
+2026-11-23 21:01:36.748 IST [74302] LOG:  checkpoint starting: time

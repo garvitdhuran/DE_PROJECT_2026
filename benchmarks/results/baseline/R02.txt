@@ -1,0 +1,48 @@
+=== R02 run 1 ===
+GroupAggregate  (cost=235.27..235.55 rows=14 width=14) (actual time=0.857..0.858 rows=2 loops=1)
+  Group Key: season_no
+  Buffers: shared hit=203
+  ->  Sort  (cost=235.27..235.30 rows=14 width=6) (actual time=0.597..0.598 rows=13 loops=1)
+        Sort Key: season_no
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=203
+        ->  Seq Scan on episodes  (cost=0.00..235.00 rows=14 width=6) (actual time=0.522..0.583 rows=13 loops=1)
+              Filter: (title_id = 2909)
+              Rows Removed by Filter: 19987
+              Buffers: shared hit=200
+Planning:
+  Buffers: shared hit=92
+Planning Time: 0.185 ms
+Execution Time: 0.983 ms
+=== R02 run 2 ===
+GroupAggregate  (cost=235.27..235.55 rows=14 width=14) (actual time=0.581..0.581 rows=2 loops=1)
+  Group Key: season_no
+  Buffers: shared hit=203
+  ->  Sort  (cost=235.27..235.30 rows=14 width=6) (actual time=0.576..0.576 rows=13 loops=1)
+        Sort Key: season_no
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=203
+        ->  Seq Scan on episodes  (cost=0.00..235.00 rows=14 width=6) (actual time=0.509..0.568 rows=13 loops=1)
+              Filter: (title_id = 2909)
+              Rows Removed by Filter: 19987
+              Buffers: shared hit=200
+Planning:
+  Buffers: shared hit=92
+Planning Time: 0.153 ms
+Execution Time: 0.602 ms
+=== R02 run 3 ===
+GroupAggregate  (cost=235.27..235.55 rows=14 width=14) (actual time=0.572..0.573 rows=2 loops=1)
+  Group Key: season_no
+  Buffers: shared hit=203
+  ->  Sort  (cost=235.27..235.30 rows=14 width=6) (actual time=0.569..0.569 rows=13 loops=1)
+        Sort Key: season_no
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=203
+        ->  Seq Scan on episodes  (cost=0.00..235.00 rows=14 width=6) (actual time=0.504..0.562 rows=13 loops=1)
+              Filter: (title_id = 2909)
+              Rows Removed by Filter: 19987
+              Buffers: shared hit=200
+Planning:
+  Buffers: shared hit=92
+Planning Time: 0.152 ms
+Execution Time: 0.594 ms

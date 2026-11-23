@@ -1,0 +1,69 @@
+=== R01 run 1 ===
+Unique  (cost=2868.92..2870.12 rows=140 width=536) (actual time=12.061..12.062 rows=1 loops=1)
+  Buffers: shared hit=1654
+  ->  Sort  (cost=2868.92..2869.52 rows=240 width=536) (actual time=12.060..12.061 rows=1 loops=1)
+        Sort Key: v.title_id, v.started_at DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=1654
+        ->  Hash Join  (cost=58.80..2859.43 rows=240 width=536) (actual time=5.938..12.011 rows=1 loops=1)
+              Hash Cond: (v.title_id = t.title_id)
+              Buffers: shared hit=1648
+              ->  Seq Scan on viewing_activity v  (cost=0.00..2800.00 rows=240 width=20) (actual time=5.563..11.636 rows=1 loops=1)
+                    Filter: ((NOT completed) AND (profile_id = 7043))
+                    Rows Removed by Filter: 200400
+                    Buffers: shared hit=1600
+              ->  Hash  (cost=52.80..52.80 rows=480 width=520) (actual time=0.358..0.358 rows=3000 loops=1)
+                    Buckets: 4096 (originally 1024)  Batches: 1 (originally 1)  Memory Usage: 218kB
+                    Buffers: shared hit=48
+                    ->  Seq Scan on titles t  (cost=0.00..52.80 rows=480 width=520) (actual time=0.005..0.183 rows=3000 loops=1)
+                          Buffers: shared hit=48
+Planning:
+  Buffers: shared hit=137
+Planning Time: 0.604 ms
+Execution Time: 12.257 ms
+=== R01 run 2 ===
+Unique  (cost=2868.92..2870.12 rows=140 width=536) (actual time=9.871..9.872 rows=1 loops=1)
+  Buffers: shared hit=1654
+  ->  Sort  (cost=2868.92..2869.52 rows=240 width=536) (actual time=9.870..9.871 rows=1 loops=1)
+        Sort Key: v.title_id, v.started_at DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=1654
+        ->  Hash Join  (cost=58.80..2859.43 rows=240 width=536) (actual time=5.010..9.861 rows=1 loops=1)
+              Hash Cond: (v.title_id = t.title_id)
+              Buffers: shared hit=1648
+              ->  Seq Scan on viewing_activity v  (cost=0.00..2800.00 rows=240 width=20) (actual time=4.682..9.533 rows=1 loops=1)
+                    Filter: ((NOT completed) AND (profile_id = 7043))
+                    Rows Removed by Filter: 200400
+                    Buffers: shared hit=1600
+              ->  Hash  (cost=52.80..52.80 rows=480 width=520) (actual time=0.320..0.321 rows=3000 loops=1)
+                    Buckets: 4096 (originally 1024)  Batches: 1 (originally 1)  Memory Usage: 218kB
+                    Buffers: shared hit=48
+                    ->  Seq Scan on titles t  (cost=0.00..52.80 rows=480 width=520) (actual time=0.008..0.164 rows=3000 loops=1)
+                          Buffers: shared hit=48
+Planning:
+  Buffers: shared hit=137
+Planning Time: 0.241 ms
+Execution Time: 9.894 ms
+=== R01 run 3 ===
+Unique  (cost=2868.92..2870.12 rows=140 width=536) (actual time=9.939..9.940 rows=1 loops=1)
+  Buffers: shared hit=1654
+  ->  Sort  (cost=2868.92..2869.52 rows=240 width=536) (actual time=9.938..9.939 rows=1 loops=1)
+        Sort Key: v.title_id, v.started_at DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=1654
+        ->  Hash Join  (cost=58.80..2859.43 rows=240 width=536) (actual time=5.034..9.929 rows=1 loops=1)
+              Hash Cond: (v.title_id = t.title_id)
+              Buffers: shared hit=1648
+              ->  Seq Scan on viewing_activity v  (cost=0.00..2800.00 rows=240 width=20) (actual time=4.700..9.593 rows=1 loops=1)
+                    Filter: ((NOT completed) AND (profile_id = 7043))
+                    Rows Removed by Filter: 200400
+                    Buffers: shared hit=1600
+              ->  Hash  (cost=52.80..52.80 rows=480 width=520) (actual time=0.323..0.323 rows=3000 loops=1)
+                    Buckets: 4096 (originally 1024)  Batches: 1 (originally 1)  Memory Usage: 218kB
+                    Buffers: shared hit=48
+                    ->  Seq Scan on titles t  (cost=0.00..52.80 rows=480 width=520) (actual time=0.011..0.167 rows=3000 loops=1)
+                          Buffers: shared hit=48
+Planning:
+  Buffers: shared hit=137
+Planning Time: 0.271 ms
+Execution Time: 9.964 ms

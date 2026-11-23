@@ -1,0 +1,60 @@
+=== R11 run 1 ===
+Sort  (cost=2054.77..2054.78 rows=1 width=24) (actual time=6.569..6.591 rows=1373 loops=1)
+  Sort Key: i.account_id
+  Sort Method: quicksort  Memory: 91kB
+  Buffers: shared hit=5155
+  ->  Nested Loop  (cost=0.28..2054.76 rows=1 width=24) (actual time=4.588..6.503 rows=1373 loops=1)
+        Buffers: shared hit=5152
+        ->  Seq Scan on invoices i  (cost=0.00..2037.76 rows=2 width=24) (actual time=4.581..5.540 rows=1376 loops=1)
+              Filter: (((status)::text = 'FAILED'::text) AND (billing_period_start = '2026-06-01'::date))
+              Rows Removed by Filter: 131681
+              Buffers: shared hit=1024
+        ->  Index Scan using accounts_pkey on accounts a  (cost=0.28..8.30 rows=1 width=4) (actual time=0.001..0.001 rows=1 loops=1376)
+              Index Cond: (account_id = i.account_id)
+              Filter: ((status)::text = ANY ('{ACTIVE,ON_HOLD}'::text[]))
+              Rows Removed by Filter: 0
+              Buffers: shared hit=4128
+Planning:
+  Buffers: shared hit=176
+Planning Time: 0.252 ms
+Execution Time: 6.625 ms
+=== R11 run 2 ===
+Sort  (cost=2054.77..2054.78 rows=1 width=24) (actual time=10.596..10.621 rows=1373 loops=1)
+  Sort Key: i.account_id
+  Sort Method: quicksort  Memory: 91kB
+  Buffers: shared hit=5155
+  ->  Nested Loop  (cost=0.28..2054.76 rows=1 width=24) (actual time=6.759..10.437 rows=1373 loops=1)
+        Buffers: shared hit=5152
+        ->  Seq Scan on invoices i  (cost=0.00..2037.76 rows=2 width=24) (actual time=6.745..8.627 rows=1376 loops=1)
+              Filter: (((status)::text = 'FAILED'::text) AND (billing_period_start = '2026-06-01'::date))
+              Rows Removed by Filter: 131681
+              Buffers: shared hit=1024
+        ->  Index Scan using accounts_pkey on accounts a  (cost=0.28..8.30 rows=1 width=4) (actual time=0.001..0.001 rows=1 loops=1376)
+              Index Cond: (account_id = i.account_id)
+              Filter: ((status)::text = ANY ('{ACTIVE,ON_HOLD}'::text[]))
+              Rows Removed by Filter: 0
+              Buffers: shared hit=4128
+Planning:
+  Buffers: shared hit=176
+Planning Time: 0.237 ms
+Execution Time: 10.661 ms
+=== R11 run 3 ===
+Sort  (cost=2054.77..2054.78 rows=1 width=24) (actual time=5.732..5.753 rows=1373 loops=1)
+  Sort Key: i.account_id
+  Sort Method: quicksort  Memory: 91kB
+  Buffers: shared hit=5155
+  ->  Nested Loop  (cost=0.28..2054.76 rows=1 width=24) (actual time=3.952..5.664 rows=1373 loops=1)
+        Buffers: shared hit=5152
+        ->  Seq Scan on invoices i  (cost=0.00..2037.76 rows=2 width=24) (actual time=3.943..4.750 rows=1376 loops=1)
+              Filter: (((status)::text = 'FAILED'::text) AND (billing_period_start = '2026-06-01'::date))
+              Rows Removed by Filter: 131681
+              Buffers: shared hit=1024
+        ->  Index Scan using accounts_pkey on accounts a  (cost=0.28..8.30 rows=1 width=4) (actual time=0.001..0.001 rows=1 loops=1376)
+              Index Cond: (account_id = i.account_id)
+              Filter: ((status)::text = ANY ('{ACTIVE,ON_HOLD}'::text[]))
+              Rows Removed by Filter: 0
+              Buffers: shared hit=4128
+Planning:
+  Buffers: shared hit=176
+Planning Time: 0.229 ms
+Execution Time: 5.787 ms

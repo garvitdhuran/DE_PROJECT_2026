@@ -2,6 +2,7 @@
 -- Load CSV data in foreign-key dependency order.
 -- Run from the project root using psql.
 
+SET search_path TO netflix;
 \copy plans FROM 'seed_data/plans.csv' WITH (FORMAT csv, HEADER true);
 \copy accounts FROM 'seed_data/accounts.csv' WITH (FORMAT csv, HEADER true);
 \copy profiles FROM 'seed_data/profiles.csv' WITH (FORMAT csv, HEADER true);

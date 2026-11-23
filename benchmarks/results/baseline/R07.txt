@@ -1,0 +1,45 @@
+=== R07 run 1 ===
+Limit  (cost=249.03..249.03 rows=1 width=524) (actual time=0.590..0.590 rows=1 loops=1)
+  Buffers: shared hit=203
+  ->  Sort  (cost=249.03..249.04 rows=5 width=524) (actual time=0.589..0.589 rows=1 loops=1)
+        Sort Key: season_no, episode_no
+        Sort Method: top-N heapsort  Memory: 25kB
+        Buffers: shared hit=203
+        ->  Seq Scan on episodes  (cost=0.00..249.00 rows=5 width=524) (actual time=0.523..0.584 rows=9 loops=1)
+              Filter: ((title_id = 2909) AND (ROW(season_no, episode_no) > ROW(1, 4)))
+              Rows Removed by Filter: 19991
+              Buffers: shared hit=200
+Planning:
+  Buffers: shared hit=85
+Planning Time: 0.130 ms
+Execution Time: 0.600 ms
+=== R07 run 2 ===
+Limit  (cost=249.03..249.03 rows=1 width=524) (actual time=0.578..0.578 rows=1 loops=1)
+  Buffers: shared hit=203
+  ->  Sort  (cost=249.03..249.04 rows=5 width=524) (actual time=0.578..0.578 rows=1 loops=1)
+        Sort Key: season_no, episode_no
+        Sort Method: top-N heapsort  Memory: 25kB
+        Buffers: shared hit=203
+        ->  Seq Scan on episodes  (cost=0.00..249.00 rows=5 width=524) (actual time=0.512..0.572 rows=9 loops=1)
+              Filter: ((title_id = 2909) AND (ROW(season_no, episode_no) > ROW(1, 4)))
+              Rows Removed by Filter: 19991
+              Buffers: shared hit=200
+Planning:
+  Buffers: shared hit=85
+Planning Time: 0.174 ms
+Execution Time: 0.590 ms
+=== R07 run 3 ===
+Limit  (cost=249.03..249.03 rows=1 width=524) (actual time=0.571..0.571 rows=1 loops=1)
+  Buffers: shared hit=203
+  ->  Sort  (cost=249.03..249.04 rows=5 width=524) (actual time=0.570..0.570 rows=1 loops=1)
+        Sort Key: season_no, episode_no
+        Sort Method: top-N heapsort  Memory: 25kB
+        Buffers: shared hit=203
+        ->  Seq Scan on episodes  (cost=0.00..249.00 rows=5 width=524) (actual time=0.506..0.565 rows=9 loops=1)
+              Filter: ((title_id = 2909) AND (ROW(season_no, episode_no) > ROW(1, 4)))
+              Rows Removed by Filter: 19991
+              Buffers: shared hit=200
+Planning:
+  Buffers: shared hit=85
+Planning Time: 0.121 ms
+Execution Time: 0.581 ms

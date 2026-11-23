@@ -1,0 +1,36 @@
+=== R13 run 1 ===
+Seq Scan on episodes e  (cost=2800.00..3042.00 rows=7 width=8) (actual time=18.841..18.842 rows=0 loops=1)
+  Filter: ((NOT (ANY (episode_id = (hashed SubPlan 1).col1))) AND (title_id = 2523))
+  Rows Removed by Filter: 20000
+  Buffers: shared hit=1800
+  SubPlan 1
+    ->  Seq Scan on viewing_activity v  (cost=0.00..2560.00 rows=96000 width=4) (actual time=0.004..7.336 rows=200401 loops=1)
+          Buffers: shared hit=1600
+Planning:
+  Buffers: shared hit=115
+Planning Time: 0.196 ms
+Execution Time: 18.862 ms
+=== R13 run 2 ===
+Seq Scan on episodes e  (cost=2800.00..3042.00 rows=7 width=8) (actual time=18.834..18.834 rows=0 loops=1)
+  Filter: ((NOT (ANY (episode_id = (hashed SubPlan 1).col1))) AND (title_id = 2523))
+  Rows Removed by Filter: 20000
+  Buffers: shared hit=1800
+  SubPlan 1
+    ->  Seq Scan on viewing_activity v  (cost=0.00..2560.00 rows=96000 width=4) (actual time=0.004..7.367 rows=200401 loops=1)
+          Buffers: shared hit=1600
+Planning:
+  Buffers: shared hit=115
+Planning Time: 0.199 ms
+Execution Time: 18.855 ms
+=== R13 run 3 ===
+Seq Scan on episodes e  (cost=2800.00..3042.00 rows=7 width=8) (actual time=18.779..18.779 rows=0 loops=1)
+  Filter: ((NOT (ANY (episode_id = (hashed SubPlan 1).col1))) AND (title_id = 2523))
+  Rows Removed by Filter: 20000
+  Buffers: shared hit=1800
+  SubPlan 1
+    ->  Seq Scan on viewing_activity v  (cost=0.00..2560.00 rows=96000 width=4) (actual time=0.003..7.369 rows=200401 loops=1)
+          Buffers: shared hit=1600
+Planning:
+  Buffers: shared hit=115
+Planning Time: 0.184 ms
+Execution Time: 18.801 ms

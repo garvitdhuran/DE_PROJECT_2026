@@ -1,0 +1,102 @@
+=== R25 run 1 ===
+Limit  (cost=216.83..216.88 rows=20 width=12) (actual time=0.636..0.637 rows=20 loops=1)
+  Buffers: shared hit=49
+  ->  Sort  (cost=216.83..216.99 rows=67 width=12) (actual time=0.635..0.636 rows=20 loops=1)
+        Sort Key: (count(*)) DESC, tg2.title_id
+        Sort Method: top-N heapsort  Memory: 26kB
+        Buffers: shared hit=49
+        ->  HashAggregate  (cost=212.54..215.04 rows=67 width=12) (actual time=0.568..0.610 rows=399 loops=1)
+              Group Key: tg2.title_id
+              Filter: (count(*) >= 2)
+              Batches: 1  Memory Usage: 209kB
+              Rows Removed by Filter: 993
+              Buffers: shared hit=43
+              ->  Hash Join  (cost=47.68..202.42 rows=2024 width=4) (actual time=0.015..0.418 rows=1824 loops=1)
+                    Hash Cond: (tg2.genre_id = tg1.genre_id)
+                    Join Filter: (tg2.title_id <> tg1.title_id)
+                    Rows Removed by Join Filter: 3
+                    Buffers: shared hit=43
+                    ->  Seq Scan on title_genres tg2  (cost=0.00..130.40 rows=9040 width=8) (actual time=0.004..0.170 rows=5963 loops=1)
+                          Buffers: shared hit=40
+                    ->  Hash  (cost=47.12..47.12 rows=45 width=8) (actual time=0.008..0.008 rows=3 loops=1)
+                          Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                          Buffers: shared hit=3
+                          ->  Bitmap Heap Scan on title_genres tg1  (cost=4.63..47.12 rows=45 width=8) (actual time=0.006..0.006 rows=3 loops=1)
+                                Recheck Cond: (title_id = 2909)
+                                Heap Blocks: exact=1
+                                Buffers: shared hit=3
+                                ->  Bitmap Index Scan on title_genres_pkey  (cost=0.00..4.62 rows=45 width=0) (actual time=0.003..0.003 rows=3 loops=1)
+                                      Index Cond: (title_id = 2909)
+                                      Buffers: shared hit=2
+Planning:
+  Buffers: shared hit=108
+Planning Time: 0.205 ms
+Execution Time: 0.658 ms
+=== R25 run 2 ===
+Limit  (cost=216.83..216.88 rows=20 width=12) (actual time=0.593..0.594 rows=20 loops=1)
+  Buffers: shared hit=49
+  ->  Sort  (cost=216.83..216.99 rows=67 width=12) (actual time=0.593..0.593 rows=20 loops=1)
+        Sort Key: (count(*)) DESC, tg2.title_id
+        Sort Method: top-N heapsort  Memory: 26kB
+        Buffers: shared hit=49
+        ->  HashAggregate  (cost=212.54..215.04 rows=67 width=12) (actual time=0.515..0.556 rows=399 loops=1)
+              Group Key: tg2.title_id
+              Filter: (count(*) >= 2)
+              Batches: 1  Memory Usage: 209kB
+              Rows Removed by Filter: 993
+              Buffers: shared hit=43
+              ->  Hash Join  (cost=47.68..202.42 rows=2024 width=4) (actual time=0.014..0.379 rows=1824 loops=1)
+                    Hash Cond: (tg2.genre_id = tg1.genre_id)
+                    Join Filter: (tg2.title_id <> tg1.title_id)
+                    Rows Removed by Join Filter: 3
+                    Buffers: shared hit=43
+                    ->  Seq Scan on title_genres tg2  (cost=0.00..130.40 rows=9040 width=8) (actual time=0.004..0.147 rows=5963 loops=1)
+                          Buffers: shared hit=40
+                    ->  Hash  (cost=47.12..47.12 rows=45 width=8) (actual time=0.007..0.007 rows=3 loops=1)
+                          Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                          Buffers: shared hit=3
+                          ->  Bitmap Heap Scan on title_genres tg1  (cost=4.63..47.12 rows=45 width=8) (actual time=0.006..0.006 rows=3 loops=1)
+                                Recheck Cond: (title_id = 2909)
+                                Heap Blocks: exact=1
+                                Buffers: shared hit=3
+                                ->  Bitmap Index Scan on title_genres_pkey  (cost=0.00..4.62 rows=45 width=0) (actual time=0.003..0.003 rows=3 loops=1)
+                                      Index Cond: (title_id = 2909)
+                                      Buffers: shared hit=2
+Planning:
+  Buffers: shared hit=108
+Planning Time: 0.174 ms
+Execution Time: 0.614 ms
+=== R25 run 3 ===
+Limit  (cost=216.83..216.88 rows=20 width=12) (actual time=0.583..0.584 rows=20 loops=1)
+  Buffers: shared hit=49
+  ->  Sort  (cost=216.83..216.99 rows=67 width=12) (actual time=0.583..0.583 rows=20 loops=1)
+        Sort Key: (count(*)) DESC, tg2.title_id
+        Sort Method: top-N heapsort  Memory: 26kB
+        Buffers: shared hit=49
+        ->  HashAggregate  (cost=212.54..215.04 rows=67 width=12) (actual time=0.515..0.557 rows=399 loops=1)
+              Group Key: tg2.title_id
+              Filter: (count(*) >= 2)
+              Batches: 1  Memory Usage: 209kB
+              Rows Removed by Filter: 993
+              Buffers: shared hit=43
+              ->  Hash Join  (cost=47.68..202.42 rows=2024 width=4) (actual time=0.015..0.381 rows=1824 loops=1)
+                    Hash Cond: (tg2.genre_id = tg1.genre_id)
+                    Join Filter: (tg2.title_id <> tg1.title_id)
+                    Rows Removed by Join Filter: 3
+                    Buffers: shared hit=43
+                    ->  Seq Scan on title_genres tg2  (cost=0.00..130.40 rows=9040 width=8) (actual time=0.004..0.149 rows=5963 loops=1)
+                          Buffers: shared hit=40
+                    ->  Hash  (cost=47.12..47.12 rows=45 width=8) (actual time=0.008..0.008 rows=3 loops=1)
+                          Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                          Buffers: shared hit=3
+                          ->  Bitmap Heap Scan on title_genres tg1  (cost=4.63..47.12 rows=45 width=8) (actual time=0.006..0.006 rows=3 loops=1)
+                                Recheck Cond: (title_id = 2909)
+                                Heap Blocks: exact=1
+                                Buffers: shared hit=3
+                                ->  Bitmap Index Scan on title_genres_pkey  (cost=0.00..4.62 rows=45 width=0) (actual time=0.004..0.004 rows=3 loops=1)
+                                      Index Cond: (title_id = 2909)
+                                      Buffers: shared hit=2
+Planning:
+  Buffers: shared hit=108
+Planning Time: 0.183 ms
+Execution Time: 0.605 ms
